@@ -1,0 +1,11 @@
+node*modules
+build/
+.git
+tmp/
+*.log
+\_.md
+\*.gitignore
+.vscode/
+.idea/
+!pkg/
+tools/

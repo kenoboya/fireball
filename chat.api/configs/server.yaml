@@ -1,0 +1,15 @@
+http:
+  port: ":8080"
+  maxHeaderBytes: 1
+  readTimeout: 10s
+  writeTimeout: 10s
+websocket:
+  readBufferSize: 1024
+  writeBufferSize: 1024    
+cache:
+  TTL: 1h  
+rabbitmq:
+  host: "rabbitmq"
+  port: 5672
+profile:
+  port: "profile_api:50053" 

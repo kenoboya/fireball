@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+package proto;
+
+option go_package = "./internal/server/grpc/proto;proto";
+
+service ProfileService {
+    rpc GetUserBriefInfo(UserRequest) returns (UserBriefInfoResponse);
+    rpc GetUsersBriefInfo(UsersRequest) returns(UsersBriefInfoResponse);
+    rpc GetUsersProfile (UsersRequest) returns (UsersProfileResponse);
+}
+
+message Response {
+    bool success = 1;               
+    string message = 2;  
+}
+
+message UserRequest {
+    string senderID = 1;
+    string recipientID = 2;
+}
+
+message UsersRequest {
+    string senderID = 1;
+    repeated string recipientIDs = 2;
+}
+
+message User {
+    string userID = 1;
+    string username = 2;
+    string displayName = 3;
+    optional string bio = 4;
+    optional string email = 5;
+    optional string phone = 6;
+    optional string avatarURL = 7;
+}
+
+message UsersProfileResponse {
+    repeated User users = 1;
+    Response response = 2;
+}
+
+message UserBriefInfoResponse {
+    string userID = 1;
+    string username = 2;
+    string name = 3;
+    optional string avatarURL = 4;
+    Response response = 5;
+}
+
+message UsersBriefInfoResponse {
+    repeated UserBriefInfoResponse usersBriefInfoResponse = 1;
+    Response response = 2;
+}

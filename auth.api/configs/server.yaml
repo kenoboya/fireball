@@ -1,0 +1,15 @@
+http:
+  port: ":8082"
+  maxHeaderBytes: 1
+  readTimeout: 10s
+  writeTimeout: 10s
+mongo:
+   name: fireball-auth-api
+auth:
+  accessTokenTTL: 3h
+  refreshTokenTTL: 720h
+cache:
+  TTL: 10m  
+rabbitmq:
+  host: "rabbitmq"
+  port: 5672

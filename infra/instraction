@@ -1,0 +1,7 @@
+docker network create backend
+
+// компоуз для всех контейнеров
+docker-compose -f docker-compose.shared.yml up -d
+
+// Для каждого сервиса
+docker-compose up -d
