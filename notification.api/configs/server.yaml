@@ -1,8 +1,0 @@
-rabbitmq:
-  host: "rabbitmq"
-  port: 5672
-http:
-  port: ":8084"
-  maxHeaderBytes: 1
-  readTimeout: 10s
-  writeTimeout: 10s

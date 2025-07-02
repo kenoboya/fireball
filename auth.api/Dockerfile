@@ -14,10 +14,6 @@ WORKDIR /root/
 
 COPY --from=builder /go/src/github.com/kenoboya/auth-api/api .
 
-COPY --from=builder /go/src/github.com/kenoboya/auth-api/.env .
-
-COPY --from=builder /go/src/github.com/kenoboya/auth-api/configs /configs
-
 EXPOSE 8082
 
 CMD ["./api"]

@@ -14,10 +14,6 @@ WORKDIR /root/
 
 COPY --from=builder /go/src/github.com/kenoboya/profile.api/api .
 
-COPY .env .  
-
-COPY configs /configs  
-
 EXPOSE 8081
 EXPOSE 50053
 

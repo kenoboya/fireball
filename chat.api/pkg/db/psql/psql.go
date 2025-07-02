@@ -9,12 +9,12 @@ import (
 )
 
 type PSQlConfig struct {
-	Host     string
-	Port     int
-	Username string
-	Name     string
-	SSLmode  string
-	Password string
+	Host     string `envconfig:"HOST"`
+	Port     int    `envconfig:"PORT"`
+	Username string `envconfig:"USERNAME"`
+	Name     string `envconfig:"NAME"`
+	SSLmode  string `envconfig:"SSLMODE"`
+	Password string `envconfig:"PASSWORD"`
 }
 
 func (db *PSQlConfig) getDatabaseConnectionString() string {

@@ -10,11 +10,11 @@ import (
 )
 
 type RedisConfig struct {
-	Host     string
-	Port     int
-	Password string
-	DB       int
-	TTL      time.Duration `mapstructure:"TTL"`
+	Host     string        `envconfig:"HOST"`
+	Port     int           `envconfig:"PORT"`
+	Password string        `envconfig:"PASSWORD"`
+	DB       int           `envconfig:"DB"`
+	TTL      time.Duration `envconfig:"TTL"`
 }
 
 func NewClient(config RedisConfig) *redis.Client {

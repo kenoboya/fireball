@@ -1,9 +1,0 @@
-http:
-  port: ":8081"
-  maxHeaderBytes: 1
-  readTimeout: 10s
-  writeTimeout: 10s
-grpc:
-  port: ":50053"
-mongo:
-   name: fireball-profile-api

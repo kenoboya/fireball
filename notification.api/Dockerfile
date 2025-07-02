@@ -12,8 +12,5 @@ FROM alpine:latest
 WORKDIR /root/
 
 COPY --from=builder /go/src/github.com/kenoboya/notification.api/api .
-COPY .env .
-
-COPY configs /configs
 
 CMD ["./api"]

@@ -13,11 +13,11 @@ import (
 const timeout = time.Minute
 
 type MongoConfig struct {
-	Host     string // "mongodb"
-	Port     int
-	Username string
-	Password string
-	Name     string `mapstructure:"name"`
+	Host     string `envconfig:"HOST"`
+	Port     int    `envconfig:"PORT"`
+	Username string `envconfig:"USERNAME"`
+	Password string `envconfig:"PASSWORD"`
+	Name     string `envconfig:"NAME"`
 }
 
 func (config *MongoConfig) createURI() string {

@@ -26,9 +26,9 @@ import (
 	"go.uber.org/zap"
 )
 
-func Run(configDIR string, envDIR string) {
+func Run() {
 	logger.InitLogger()
-	cfg, err := config.Init(configDIR, envDIR)
+	cfg, err := config.Init()
 	if err != nil {
 		logger.Fatal("Failed to initialize config",
 			zap.Error(err),
@@ -68,7 +68,7 @@ func Run(configDIR string, envDIR string) {
 	}
 
 	cache := cache.NewCashe(redisClient, cfg.Redis.TTL)
-	messangeCrypter, err := crypto.NewAESCipher(cfg.Auth.PasswordSalt)
+	messangeCrypter, err := crypto.NewAESCipher(cfg.Auth.MessageSalt)
 	if err != nil {
 		logger.Fatal("Failed to initialize to message crypter",
 			zap.Error(err),

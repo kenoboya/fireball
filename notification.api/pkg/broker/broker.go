@@ -40,10 +40,10 @@ const (
 )
 
 type RabbitMQConfig struct {
-	Host     string `mapstructure:"host"`
-	Port     int    `mapstructure:"port"`
-	User     string
-	Password string
+	Host     string `envconfig:"HOST"`
+	Port     int    `envconfig:"PORT"`
+	User     string `envconfig:"USER"`
+	Password string `envconfig:"PASSWORD"`
 }
 
 type RabbitMQ struct {

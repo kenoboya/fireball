@@ -20,9 +20,9 @@ import (
 	"go.uber.org/zap"
 )
 
-func Run(configDIR, envDIR string) {
+func Run() {
 	logger.InitLogger()
-	cfg, err := config.Init(configDIR, envDIR)
+	cfg, err := config.Init()
 	if err != nil {
 		logger.Fatal("Failed to initialize config",
 			zap.Error(err),
